@@ -12,7 +12,8 @@
   <%= form_for @course do |f| %>
     <%= f.text_field :name, placeholder: "Class Name" %>
     <%= f.text_area :description, size: "60x12", placeholder: "Class Description" %>
-
+    <%= f.text_field :time, placeholder: "Start Time" %>
+    <%= f.text_field :date, placeholder: "Date" %>
     <%= f.submit "Create" %>
   <% end %>
   </body>

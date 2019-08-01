@@ -3,26 +3,21 @@ Rails.application.routes.draw do
   # verb "/urls" => "namespace/controllers#action"
 
   # get 'admin' => 'admin/posts#index'
+      resources :courses, :users
+    root to: 'courses#home'
+    get "/about" => "courses#about"
+    get "/classes" => "courses#classes"
+    get "/contact" => "courses#contact"
+    get "/courses" => "courses#index"
+    get 'course/:id' => 'courses#show'
 
-  namespace :api do
-    root "/api/courses#index"
-    get "/about" => "/api/courses#about"
-    get "/classes" => "/api/courses#classes"
-    get "/contact" => "/api/courses#contact"
-    get "/course/new" => "/api/courses#new"
-    post "/courses" => "/api/courses#create"
-
+    post "course" => "courses#create"
+    delete 'course/:id' => 'courses#destroy'
 
     post "/users" => "users#create"
-  
-  end
 
-  get "/welcome" => "welcome#show"
+    get "/welcome" => "welcome#show"
 
- 
-
-
-  
 
   # get "/classes/:id" => "courses#show", as: "course"
   
@@ -37,6 +32,5 @@ Rails.application.routes.draw do
   # get "/courses" => "course#courses"
   # post "/contact" => "course#contact"
   # patch 'course/:id' => 'course#update'
-  # delete 'course/:id' => 'course#destroy'
 
 end
