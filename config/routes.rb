@@ -4,10 +4,11 @@ Rails.application.routes.draw do
 
   # get 'admin' => 'admin/posts#index'
       resources :courses, :users
-    root to: 'courses#home'
-    get "/about" => "courses#about"
-    get "/classes" => "courses#classes"
-    get "/contact" => "courses#contact"
+    root to: 'client#home'
+    get "/about" => "client#about"
+    get "/classes" => "client#classes"
+    get "/contact" => "client#contact"
+
     get "/courses" => "courses#index"
     get 'course/:id' => 'courses#show'
 
